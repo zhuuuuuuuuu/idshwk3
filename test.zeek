@@ -3,14 +3,14 @@ event http_header (c: connection, is_orig: bool, name: string, value: string)
 {
   if(name=="User-Agent")
   {
-    if(c$id$orig_h in x)
-    {
-      add x[c$id$orig_h][to_lower(value)];
-    }
-    else
-    {
-      x[c$id$orig_h]=set(to_lower(value));
-     }
+   	 if(c$id$orig_h in x)
+   	 {
+      		add x[c$id$orig_h][to_lower(value)];
+    	}
+   	 else
+   	 {
+      		x[c$id$orig_h]=set(to_lower(value));
+     	}
 
   }
 }
